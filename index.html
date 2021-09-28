@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="design.css">
+  <title>Photo Editor</title>
+</head>
+<body>
+  <div class="app flex-center-perfect">
+    <div class="canvas flex-center-vertical">
+      <main class="canvas__main flex-center-perfect">
+        <div class="main__output">
+          <label 
+            id="uploadLabel" 
+            for="imgFile" 
+            class="flex-center-perfect hoverable"
+          >
+            Upload Image
+          </label>
+          <input id="imgFile" type="file" accept="image/*" >
+          <img id="imgOutput"/>
+        </div>
+        <label 
+          id="uploadAgainLabel" 
+          class="upload-again hoverable" 
+          for="imgFile"
+          >
+          Upload again?
+        </label>
+        <!-- Dynamically change when user uploaded an image -->
+        <a id="downloadLink" class="download-link" href="" download="">
+          <img src="" />
+        </a>
+      </main>
+      <nav class="canvas__nav">
+        <ul id="adjustContainer" class="edit">
+          <h4 class="edit__title">Adjust</h4>
+
+          <li>
+            <div class="adjust__info">Brightness <span id="outputValue">100</span></div>
+            <input disabled class="adjust__range hoverable" name="brightness" type="range" min="0" max="200" value="100">
+          </li>
+          <li>
+            <div class="adjust__info">Contrast <span id="outputValue">100</span></div>
+            <input disabled class="adjust__range hoverable" name="contrast" type="range" min="0" max="200" value="100">
+          </li>
+          <li>
+            <div class="adjust__info">Saturation <span id="outputValue">100</span></div>
+            <input disabled class="adjust__range hoverable" name="saturation" type="range" min="0" max="200" value="100">
+          </li>
+          <li>
+            <div class="adjust__info">Blur <span id="outputValue">0</span></div>
+            <input disabled class="adjust__range hoverable" name="blur" type="range" min="0" max="100" value="0">
+          </li>
+        </ul>
+        <ul id="filterContainer" class="edit">
+          <h4 class="edit__title">Filter</h4>
+          <li id="joy" class="filter hoverable">Joy</li>
+          <li id="summer" class="filter hoverable">Summer</li>
+          <li id="b&w" class="filter hoverable">B&W</li>
+          <li id="chill" class="filter hoverable">Chill</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
